@@ -2,3 +2,5 @@ requests
 beautifulsoup4
 schedule
 python-dotenv
+
+playwright

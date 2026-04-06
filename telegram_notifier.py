@@ -3,7 +3,7 @@ import requests
 import logging
 
 def send_telegram_alert(property_details):
-    bot_token = os.getenv('TELEGRAM_TOKEN')
+    bot_token = os.getenv('TELEGRAM_BOT_TOKEN') or os.getenv('TELEGRAM_TOKEN')
     chat_id = os.getenv('TELEGRAM_CHAT_ID')
 
     if not bot_token or not chat_id:
