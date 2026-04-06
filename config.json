@@ -1,0 +1,8 @@
+{
+  "city": "Nashik",
+  "property_type": "plot",
+  "min_price": 0,
+  "max_price": 2000000,
+  "keywords": ["urgent", "distress"],
+  "check_interval": 120
+}
