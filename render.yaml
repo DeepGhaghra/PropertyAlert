@@ -1,0 +1,29 @@
+services:
+  - type: worker
+    name: property-alert-bot
+    env: docker
+    dockerfilePath: ./Dockerfile
+    
+    # We use a persistent disk so your database doesn't reset when Render restarts the bot
+    disk:
+      name: bot-database
+      mountPath: /data
+      sizeGB: 1
+      
+    envVars:
+      # Tell the app to store the database on the persistent disk
+      - key: DB_PATH
+        value: /data/deals.db
+        
+      # These sync: false variables will need to be manually filled out
+      # in the Render Dashboard after you create the service.
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
+      - key: SEARCH_URL
+        sync: false
+      - key: KEYWORDS
+        sync: false
+      - key: CHECK_INTERVAL_SECONDS
+        value: "300" # Defaults to checking every 5 minutes to be safe
