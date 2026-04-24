@@ -2,6 +2,6 @@ requests
 beautifulsoup4
 schedule
 python-dotenv
-
+pyTelegramBotAPI
 playwright
 playwright-stealth
